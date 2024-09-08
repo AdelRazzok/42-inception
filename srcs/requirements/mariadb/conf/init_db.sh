@@ -1,4 +1,6 @@
-service mysql start;  
+#!/bin/sh
+
+service mysql start
 
 mysql -e "CREATE DATABASE IF NOT EXISTS $DB_NAME;"
 mysql -e "CREATE USER IF NOT EXISTS $DB_USER@'localhost' IDENTIFIED BY '$DB_PASSWORD';"
@@ -8,4 +10,4 @@ mysql -e "FLUSH PRIVILEGES;"
 
 mysqladmin -u root -p$DB_ROOT_PASSWORD shutdown;
 
-exec mysqld_safe;
+exec mysqld_safe
