@@ -4,7 +4,7 @@ sleep 10
 
 wordpress_path="/var/www/html/wordpress"
 
-if [ ! -f /var/www/html/wp-config.php ];
+if [ ! -f "${wordpress_path}/wp-config.php" ];
 then
     wp config create --allow-root \
         --dbname=$DB_NAME \
@@ -26,6 +26,11 @@ then
         $WP_USER_EMAIL \
         --user_pass=$WP_USER_PASSWORD \
         --path=$wordpress_path
+fi
+
+if [ ! -d /run/php ];
+then
+    mkdir -p /run/php
 fi
 
 /usr/sbin/php-fpm8.3 -F

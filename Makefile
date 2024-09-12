@@ -11,7 +11,7 @@ down:
 
 fclean: down
 				docker system prune -af --volumes
-				rm -rf C:/Users/skurt/Desktop/mariadb
-				rm -rf C:/Users/skurt/Desktop/wordpress
+# rm -rf /c/Users/skurt/Desktop/mariadb
+# rm -rf /c/Users/skurt/Desktop/wordpress
 
 re: fclean all

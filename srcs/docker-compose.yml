@@ -54,13 +54,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: C:/Users/skurt/Desktop/mariadb # To change on 42 device
+      device: /c/Users/skurt/Desktop/mariadb # To change on 42 device
   wordpress:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: C:/Users/skurt/Desktop/wordpress # To change on 42 device
+      device: /c/Users/skurt/Desktop/wordpress # To change on 42 device
 
 networks:
   inception:
