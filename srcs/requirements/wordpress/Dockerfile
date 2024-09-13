@@ -34,8 +34,6 @@ RUN wget https://wordpress.org/wordpress-6.6.1.tar.gz \
     && chown -R root:root /var/www/html/wordpress \
     && rm -rf wordpress-6.6.1.tar.gz
 
-WORKDIR /
-
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar \
     && mv wp-cli.phar /usr/local/bin/wp
