@@ -1,4 +1,4 @@
-# TODO: Add sudo and changes volumes path on 42 devices
+PATH := ${PATH}:/home/arazzok/.docker/cli-plugins
 
 all:
 	docker-compose -f ./srcs/docker-compose.yml up -d --build
@@ -11,7 +11,7 @@ down:
 
 fclean: down
 				docker system prune -af --volumes
-# rm -rf /c/Users/skurt/Desktop/mariadb
-# rm -rf /c/Users/skurt/Desktop/wordpress
+				rm -rf /home/arazzok/data/mariadb/*
+				rm -rf /home/arazzok/data/wordpress/*
 
 re: fclean all
